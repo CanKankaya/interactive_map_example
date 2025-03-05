@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'pages/random_map.dart';
 import 'pages/supported_countries_map.dart';
 
 void main() {
@@ -42,25 +41,14 @@ class MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMi
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text('Countries World Map', style: TextStyle(color: Colors.blue)),
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            bottom: TabBar(controller: controller, tabs: const [
-              ListTile(title: Center(child: Text('Supported countries'))),
-              ListTile(title: Center(child: Text('Random colors'))),
-              // ListTile(title: Center(child: Text('Africa'))),
-            ])),
+          title: const Text('Countries World Map', style: TextStyle(color: Colors.blue)),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
         body: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          child: TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: controller,
-              children: const [
-                SupportedCountriesMap(),
-                RandomWorldMapGenerator(),
-                // AfricaContinent()
-              ]),
+          child: const SupportedCountriesMap(),
         ));
   }
 }
