@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/supported_countries_map.dart';
+import 'supported_countries_map.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
