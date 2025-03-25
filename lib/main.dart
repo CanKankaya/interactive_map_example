@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'supported_countries_map.dart';
+import 'screens/supported_countries_map.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,10 +14,12 @@ class SMapExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Worldmap Example',
-        theme: ThemeData(
-            primarySwatch: Colors.blue, visualDensity: VisualDensity.adaptivePlatformDensity),
-        home: const MyHomePage());
+      debugShowCheckedModeBanner: false,
+      title: 'Worldmap Example',
+      theme: ThemeData(
+          primarySwatch: Colors.blue, visualDensity: VisualDensity.adaptivePlatformDensity),
+      home: const MyHomePage(),
+    );
   }
 }
 
@@ -41,7 +43,10 @@ class MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMi
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Countries World Map', style: TextStyle(color: Colors.blue)),
+          title: const Text(
+            'Countries World Map',
+            style: TextStyle(color: Colors.blue),
+          ),
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
